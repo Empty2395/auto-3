@@ -1,0 +1,384 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #fff;
+    background-color: #121212;
+    text-align: center; /* Выровнять весь текст по центру */
+}
+
+header.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Центрирование логотипа и меню */
+header .logo {
+    margin-right: auto; /* Логотип остается слева */
+}
+
+header .logo img {
+    width: 150px; /* Старая ширина логотипа */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-start; /* Выравниваем меню влево */
+    flex-grow: 1; /* Позволяет nav занимать оставшееся пространство */
+}
+
+header nav a {
+    color: #ffd700; /* Цвет ссылок */
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 20px; /* Добавляем отступ слева для каждого элемента меню */
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ff4b2b; /* Цвет при наведении */
+}
+
+section {
+    padding: 100px 20px; /* Пространство для фиксации меню */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование содержимого секций */
+}
+
+.hero {
+    background-image: url('hero-car.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.hero button {
+    background-color: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #ff6f61;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+/* Стилі для чат-бота */
+.chatbot {
+    display: none; /* Спочатку приховано */
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #292929;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto; /* Дозволяє прокручування, якщо вміст перевищує висоту */
+}
+/* Стилі для кнопки відкриття чат-бота */
+.chatbot-toggle {
+    position: fixed;
+    bottom: 80px; /* Відстань від нижнього краю */
+    right: 20px; /* Відстань від правого краю */
+    background-color: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001; /* Вищий порядок, ніж чат-бот */
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+    background-color: #ff6f61; /* Колір при наведенні */
+}
+
+.chatbot-header {
+    background-color: #ff4b2b;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0; /* Заокруглені верхні кути */
+}
+
+.chatbot-messages {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Проміжок між повідомленнями */
+}
+
+.message {
+    padding: 8px;
+    border-radius: 4px;
+    max-width: 80%; /* Максимальна ширина повідомлення */
+    word-wrap: break-word; /* Перенос слів, якщо повідомлення занадто довге */
+}
+
+.message.user {
+    background-color: #ffd700; /* Колір повідомлень користувача */
+    align-self: flex-end; /* Вирівнювання праворуч */
+}
+
+.message.bot {
+    background-color: #4caf50; /* Колір повідомлень бота */
+    align-self: flex-start; /* Вирівнювання ліворуч */
+}
+
+#chat-input {
+    border: none;
+    padding: 10px;
+    border-radius: 0 0 8px 8px; /* Заокруглені нижні кути */
+    width: 100%;
+    box-sizing: border-box; /* Урахування відступів у загальному розмірі */
+}
+
+
+/* Стили для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto; /* Центрирование изображений */
+}
+
+/* Стили для слайдера автомобилей */
+.car-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    justify-content: center; /* Центрирование элементов слайдера */
+}
+
+.car-item {
+    flex: 0 0 auto;
+    margin: 20px;
+    width: 250px;
+    text-align: center;
+    background: #292929;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative; /* Устанавливаем позицию для элемента */
+    overflow: hidden; /* Скрываем лишнее содержимое */
+    transition: transform 0.3s ease; /* Плавный переход для transform */
+}
+
+.car-item:hover {
+    transform: scale(1.05); /* Увеличиваем элемент при наведении */
+}
+
+.car-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.car-details {
+    max-height: 0; /* Скрываем детали по умолчанию */
+    opacity: 0; /* Скрываем детали по умолчанию */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Плавный переход для max-height и opacity */
+    overflow: hidden; /* Скрываем лишнее содержимое */
+    padding-top: 10px; /* Отступ сверху для деталей */
+}
+
+.car-item:hover .car-details {
+    max-height: 100px; /* Показываем детали при наведении */
+    opacity: 1; /* Показываем детали при наведении */
+}
+
+.advantages-container {
+    display: flex; /* Используем flexbox для горизонтального расположения */
+    justify-content: center; /* Центрируем содержимое */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку при необходимости */
+    gap: 20px; /* Промежуток между элементами */
+}
+
+.advantage-item {
+    background: #292929;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px; /* Ширина блока с преимуществом */
+    text-align: center; /* Центрирование текста внутри блока */
+}
+
+.testimonials {
+    background: #292929;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Центрирование элементов формы и контактной информации */
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff6f61;
+}
+
+.social-media {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media img {
+    width: 30px;
+}
+/* Общие стили, подходящие для десктопов */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #fff;
+    background-color: #121212;
+    text-align: center;
+}
+
+/* Медиа-запрос для планшетов и мобильных устройств */
+@media (max-width: 768px) {
+    header.navbar {
+        flex-direction: column; /* Строки для навигации выстраиваются вертикально */
+        padding: 10px;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        margin: 10px 0; /* Расстояние между ссылками меню на мобильных устройствах */
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .car-slider {
+        flex-direction: column; /* Вертикальная прокрутка для удобного отображения */
+    }
+
+    /* Скрываем изображение при очень узком экране */
+    .car-item img {
+        display: none;
+    }
+
+    .advantages-container, .testimonials, .contact {
+        padding: 20px;
+        width: 100%;
+    }
+
+    form input,
+    form textarea {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
+
+/* Медиа-запрос для очень маленьких экранов, например телефонов */
+@media (max-width: 480px) {
+    .hero button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    /* Делаем блоки отзывов более компактными */
+    .testimonial-item {
+        font-size: 0.9rem;
+    }
+
+    /* Уменьшаем шрифт в форме */
+    form label, form input, form textarea {
+        font-size: 0.9rem;
+    }
+}
+/* Анимация появления элементов при прокрутке */
+section {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}

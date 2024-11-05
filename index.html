@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосалон - Ваше авто</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Навігаційне меню -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Логотип" />
+        </div>
+        <nav>
+            <a href="#about">Про нас</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#advantages">Переваги</a>
+            <a href="#testimonials">Відгуки</a>
+            <a href="#contact">Контакти</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Автосалон "Ваше авто"</h1>
+        <p>Елітні автомобілі та відмінний сервіс</p>
+        <button onclick="scrollToSection('catalog')">Переглянути Каталог</button>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <h2>Про Нас</h2>
+        <p>Ми спеціалізуємося на продажу автомобілів преміум-класу. Пропонуємо високоякісний сервіс та найкращі умови.</p>
+        <img src="showroom.jpg" alt="Фото автосалону">
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog" id="catalog">
+        <h2>Каталог Автомобілів</h2>
+        <div class="car-slider">
+            <div class="car-item">
+                <img src="car1.jpg" alt="Автомобіль Ford Mustang">
+                <h3>Ford Mustang</h3>
+                <p>Ціна: $50,000</p>
+                <div class="car-details">
+                    <p>Пробіг: 10,000 км</p>
+                    <p>Колір: Синій</p>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="car2.jpg" alt="Автомобіль Chevrolet Camaro">
+                <h3>Chevrolet Camaro</h3>
+                <p>Ціна: $45,000</p>
+                <div class="car-details">
+                    <p>Пробіг: 15,000 км</p>
+                    <p>Колір: Жовтий</p>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="car3.jpg" alt="Автомобіль BMW M4">
+                <h3>BMW M4</h3>
+                <p>Ціна: $70,000</p>
+                <div class="car-details">
+                    <p>Пробіг: 5,000 км</p>
+                    <p>Колір: Жовтий</p>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="car4.jpg" alt="Автомобіль Audi A5">
+                <h3>Audi A5</h3>
+                <p>Ціна: $60,000</p>
+                <div class="car-details">
+                    <p>Пробіг: 20,000 км</p>
+                    <p>Колір: Сріблястий</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages" id="advantages">
+        <h2>Наші Переваги</h2>
+        <div class="advantages-container">
+            <div class="advantage-item">
+                <img src="advantage1.jpg" alt="Гарантія на автомобілі">
+                <h3>Гарантія</h3>
+                <p>Довгострокова гарантія на кожен автомобіль.</p>
+            </div>
+            <div class="advantage-item">
+                <img src="advantage2.jpg" alt="Фінансування">
+                <h3>Фінансування</h3>
+                <p>Вигідні умови кредитування.</p>
+            </div>
+            <div class="advantage-item">
+                <img src="advantage3.jpg" alt="Сервіс">
+                <h3>Сервіс</h3>
+                <p>Високоякісний сервіс та підтримка.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>Відгуки Клієнтів</h2>
+        <div class="testimonial-item">
+            <p>"Чудовий сервіс! Я купив Ford Mustang і залишився дуже задоволений."</p>
+            <h3>Іван Іваненко</h3>
+        </div>
+        <div class="testimonial-item">
+            <p>"Найкраще місце для покупки автомобіля. Рекомендую!"</p>
+            <h3>Марія Петренко</h3>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Контакти</h2>
+        <form id="contact-form" action="/send-email" method="POST" onsubmit="handleSubmit(event)">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Ваш емейл:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Отправить</button>
+        </form>
+        <div class="social-media">
+            <h3>Слідкуйте за нами:</h3>
+        <a href="https://www.instagram.com/r00mmaa/" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/r00mmaa/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </section>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" id="chatbot-toggle" onclick="openChat()">Технічна підтримка</button>
+
+    <!-- Chatbot Section -->
+    <div class="chatbot" style="display: none;"> <!-- Start hidden -->
+        <div class="chatbot-header">
+            <h3>Технічна підтримка</h3>
+            <button onclick="closeChat()">X</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <input type="text" id="chat-input" placeholder="Ваше повідомлення..." onkeydown="handleChatInput(event)" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
