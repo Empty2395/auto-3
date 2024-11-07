@@ -42,7 +42,24 @@ header nav a {
     margin-left: 20px; /* Добавляем отступ слева для каждого элемента меню */
     transition: color 0.3s ease;
 }
-
+/* Стиль для кнопки "гамбургера" */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    left: 10px; /* Расположите кнопку слева */
+}
+/* Основные стили для меню */
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+.navbar.hidden {
+    display: none;
+}
 header nav a:hover {
     color: #ff4b2b; /* Цвет при наведении */
 }
@@ -314,6 +331,20 @@ body {
 /* Адаптация для мобильных устройств */
 /* Медиа-запрос для планшетов и мобильных устройств */
 @media (max-width: 768px) {
+    
+    .navbar {
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Расположите под кнопкой "гамбургера" */
+        left: 0;
+        right: 0;
+        background: #121212; /* Цвет фона меню */
+        padding: 10px;
+        display: none;
+    }
+    .navbar.show {
+        display: flex;
+    }
     header.navbar {
         flex-direction: column;
         padding: 10px;

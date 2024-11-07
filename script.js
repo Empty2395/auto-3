@@ -32,6 +32,10 @@ function handleSubmit(event) {
     });
 }
 
+function toggleMenu() {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('show'); // Показывает или скрывает меню
+}
 
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
