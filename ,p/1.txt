@@ -13,14 +13,13 @@
         <div class="logo">
             <img src="logo.png" alt="Логотип" />
         </div>
-        <nav class="nav-links">
+        <nav>
             <a href="#about">Про нас</a>
             <a href="#catalog">Каталог</a>
             <a href="#advantages">Переваги</a>
             <a href="#testimonials">Відгуки</a>
             <a href="#contact">Контакти</a>
         </nav>
-        <div class="burger" onclick="toggleMenu()">&#9776;</div>
     </header>
 
     <!-- Hero Section -->

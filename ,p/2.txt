@@ -307,15 +307,11 @@ body {
     background-color: #121212;
     text-align: center;
 }
-/* Для мобильного меню */
-.nav-links {
-    display: flex;
-}
-/* Адаптация для мобильных устройств */
+
 /* Медиа-запрос для планшетов и мобильных устройств */
 @media (max-width: 768px) {
     header.navbar {
-        flex-direction: column;
+        flex-direction: column; /* Строки для навигации выстраиваются вертикально */
         padding: 10px;
     }
 
@@ -326,7 +322,7 @@ body {
     }
 
     header nav a {
-        margin: 10px 0;
+        margin: 10px 0; /* Расстояние между ссылками меню на мобильных устройствах */
         font-size: 16px;
     }
 
@@ -339,7 +335,12 @@ body {
     }
 
     .car-slider {
-        flex-direction: column;
+        flex-direction: column; /* Вертикальная прокрутка для удобного отображения */
+    }
+
+    /* Скрываем изображение при очень узком экране */
+    .car-item img {
+        display: none;
     }
 
     .advantages-container, .testimonials, .contact {
@@ -360,11 +361,13 @@ body {
         font-size: 14px;
         padding: 10px 20px;
     }
-
+    
+    /* Делаем блоки отзывов более компактными */
     .testimonial-item {
         font-size: 0.9rem;
     }
 
+    /* Уменьшаем шрифт в форме */
     form label, form input, form textarea {
         font-size: 0.9rem;
     }

@@ -33,13 +33,6 @@ function handleSubmit(event) {
 }
 
 
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
 // Функція для анімації появи елементів при прокрутці
 const sections = document.querySelectorAll('section');
 
